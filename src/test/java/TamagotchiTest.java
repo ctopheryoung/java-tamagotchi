@@ -13,4 +13,12 @@ public class TamagotchiTest {
     assertEquals(3, myPet.getSleepiness());
     assertEquals("alive", myPet.getStatus());
   }
+
+  @Test
+  public void feed_hungerDecresesByOneAndWeightIncresesOne_true() {
+    Tamagotchi myPet = new Tamagotchi("steve");
+    myPet.feed();
+    assertEquals(2, myPet.getHunger());
+    assertEquals(2, myPet.getWeight());
+  }
 }

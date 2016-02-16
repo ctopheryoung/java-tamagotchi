@@ -34,5 +34,10 @@ public class Tamagotchi {
     return mStatus;
   }
 
+  public void feed() {
+    mWeight++;
+    mHunger--;
+  }
+
 
 }
