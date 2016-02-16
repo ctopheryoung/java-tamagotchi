@@ -14,5 +14,25 @@ public class Tamagotchi {
     return mName;
   }
 
+  public int getWeight() {
+    return mWeight;
+  }
+
+  public int getHunger() {
+    return mHunger;
+  }
+
+  public int getHappiness() {
+    return mHappiness;
+  }
+
+  public int getSleepiness() {
+    return mSleepiness;
+  }
+
+  public String getStatus() {
+    return mStatus;
+  }
+
 
 }
