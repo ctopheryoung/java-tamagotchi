@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TamagotchiTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2016-02-16T19:19:31" hostname="epicodus-59.local" time="0.001">
+<testsuite name="TamagotchiTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2016-02-16T21:56:02" hostname="epicodus-59.local" time="0.002">
   <properties/>
   <testcase name="tamagotchi_instantiatesCorrectly" classname="TamagotchiTest" time="0.001"/>
+  <testcase name="sleep_shouldSetTirednessToZeroafterSleepingandAdd2toHunger" classname="TamagotchiTest" time="0.0"/>
+  <testcase name="checkStatus_checksIfHungryAndTired_hungry_and_tired" classname="TamagotchiTest" time="0.0"/>
   <testcase name="nap_sleepinessDecreasesOneHungerIncreasesOne_true" classname="TamagotchiTest" time="0.0"/>
   <testcase name="play_happinessAndSleepinessIncreaseByOne_true" classname="TamagotchiTest" time="0.0"/>
+  <testcase name="checkStatus_checksIfHungry" classname="TamagotchiTest" time="0.0"/>
+  <testcase name="checkStatus_checksIfDeadFromExaustion_dead" classname="TamagotchiTest" time="0.0"/>
+  <testcase name="checkStatus_checksIfSleepy" classname="TamagotchiTest" time="0.0"/>
+  <testcase name="checkStatus_checksIfDeadFromHunger_dead" classname="TamagotchiTest" time="0.0"/>
   <testcase name="feed_hungerDecresesByOneAndWeightIncresesOne_true" classname="TamagotchiTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

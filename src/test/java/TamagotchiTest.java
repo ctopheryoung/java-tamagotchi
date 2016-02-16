@@ -42,4 +42,49 @@ public class TamagotchiTest {
     assertEquals(4, myPet.getHunger());
     assertEquals(60, myPet.getMinutesOld());
   }
+
+  @Test
+  public void sleep_shouldSetTirednessToZeroafterSleepingandAdd2toHunger() {
+    Tamagotchi myPet = new Tamagotchi("steve");
+    myPet.sleep();
+    assertEquals(0, myPet.getSleepiness());
+    assertEquals(5, myPet.getHunger());
+    assertEquals(480, myPet.getMinutesOld());
+  }
+
+  @Test
+  public void checkStatus_checksIfHungry() {
+    Tamagotchi myPet = new Tamagotchi("steve");
+    myPet.setHunger(6);
+    assertEquals("hungry", myPet.checkStatus());
+  }
+
+  @Test
+  public void checkStatus_checksIfSleepy() {
+    Tamagotchi myPet = new Tamagotchi("steve");
+    myPet.setSleepiness(6);
+    assertEquals("sleepy", myPet.checkStatus());
+  }
+
+  @Test
+  public void checkStatus_checksIfHungryAndTired_hungry_and_tired() {
+    Tamagotchi myPet = new Tamagotchi("steve");
+    myPet.setHunger(6);
+    myPet.setSleepiness(6);
+    assertEquals("hungry and sleepy", myPet.checkStatus());
+  }
+
+  @Test
+  public void checkStatus_checksIfDeadFromHunger_dead() {
+    Tamagotchi myPet = new Tamagotchi("steve");
+    myPet.setHunger(7);
+    assertEquals("dead", myPet.checkStatus());
+  }
+
+  @Test
+  public void checkStatus_checksIfDeadFromExaustion_dead() {
+    Tamagotchi myPet = new Tamagotchi("steve");
+    myPet.setSleepiness(7);
+    assertEquals("dead", myPet.checkStatus());
+  }
 }
