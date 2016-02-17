@@ -10,33 +10,43 @@ public class App {
         staticFileLocation("/public");
         String layout = "templates/layout.vtl";
 
-        // 
-        // get("/", (request, response) -> {
-        //   HashMap<String, Object> model = new HashMap<String, Object>();
-        //   model.put("template", "templates/index.vtl");
-        //   model.put("places", request.session().attribute("places"));
-        //   return new ModelAndView(model, layout);
-        // }, new VelocityTemplateEngine());
-        //
-        // post("/places", (request, response) -> {
-        //   HashMap<String, Object> model = new HashMap<String, Object>();
-        //
-        //   ArrayList<Places> places = request.session().attribute("places");
-        //
-        //   if (places == null) {
-        //     places = new ArrayList<Places>();
-        //     request.session().attribute("places", places);
-        //   }
-        //
-        //   String place = request.queryParams("place");
-        //   int year = Integer.parseInt(request.queryParams("year"));
-        //   Places newPlace = new Places(place, year);
-        //
-        //   places.add(newPlace);
-        //
-        //   model.put("template", "templates/success.vtl");
-        //   return new ModelAndView(model, layout);
-        // }, new VelocityTemplateEngine());
+
+        get("/", (request, response) -> {
+          HashMap<String, Object> model = new HashMap<String, Object>();
+          model.put("template", "templates/index.vtl");
+          return new ModelAndView(model, layout);
+        }, new VelocityTemplateEngine());
+
+        post("/tamagotchis", (request, response) -> {
+          HashMap<String, Object> model = new HashMap<String, Object>();
+
+          Tamagotchi myTamagotchi = request.session().attribute("tamagotchi");
+          String name;
+          if(myTamagotchi == null) {
+            name = request.queryParams("name");
+            myTamagotchi = new Tamagotchi(name);
+            request.session().attribute("tamagotchi", myTamagotchi);
+          } else {
+            name = myTamagotchi.getName();
+          }
+
+          String action = request.queryParams("action");
+          if (action != null){
+            if (action.equals("feed")) {
+              myTamagotchi.feed();
+            } else if (action.equals("play")) {
+              myTamagotchi.play();
+            } else if (action.equals("nap")) {
+              myTamagotchi.nap();
+            } else if (action.equals("sleep")) {
+              myTamagotchi.sleep();
+            }
+          }
+
+          model.put("myTamagotchi", myTamagotchi);
+          model.put("template", "templates/success.vtl");
+          return new ModelAndView(model, layout);
+        }, new VelocityTemplateEngine());
 
     }
 }

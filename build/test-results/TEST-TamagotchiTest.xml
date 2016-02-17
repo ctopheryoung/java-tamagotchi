@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TamagotchiTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2016-02-16T21:56:02" hostname="epicodus-59.local" time="0.002">
+<testsuite name="TamagotchiTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2016-02-16T23:51:41" hostname="epicodus-59.local" time="0.001">
   <properties/>
-  <testcase name="tamagotchi_instantiatesCorrectly" classname="TamagotchiTest" time="0.001"/>
+  <testcase name="tamagotchi_instantiatesCorrectly" classname="TamagotchiTest" time="0.0"/>
   <testcase name="sleep_shouldSetTirednessToZeroafterSleepingandAdd2toHunger" classname="TamagotchiTest" time="0.0"/>
   <testcase name="checkStatus_checksIfHungryAndTired_hungry_and_tired" classname="TamagotchiTest" time="0.0"/>
   <testcase name="nap_sleepinessDecreasesOneHungerIncreasesOne_true" classname="TamagotchiTest" time="0.0"/>

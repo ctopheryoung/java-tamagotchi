@@ -4,7 +4,7 @@ public class Tamagotchi {
   private int mHunger = 3;
   private int mHappiness = 3;
   private int mSleepiness = 3;
-  private String mStatus = "alive";
+  private String mStatus = "okay";
   private int mMinutesOld = 0;
 
   public Tamagotchi (String name) {
@@ -100,6 +100,8 @@ public class Tamagotchi {
     }
     else if (mSleepiness > 4) {
       mStatus = "sleepy";
+    } else {
+      mStatus = "okay";
     }
     return mStatus;
   }

@@ -17,5 +17,26 @@ public class AppTest extends FluentTest {
   @ClassRule
   public static ServerRule server = new ServerRule();
 
+  @Test
+  public void rootTest() {
+    goTo("http://localhost:4567/");
+    assertThat(pageSource()).contains("Create a Tamagotchi");
+  }
 
+  @Test
+  public void tamagotchiIsCreatedTest() {
+    goTo("http://localhost:4567/");
+    fill("#name").with("steve");
+    submit(".btn");
+    assertThat(pageSource()).contains("steve");
+  }
+
+  @Test
+  public void tamagotchiIsFedTest() {
+    goTo("http://localhost:4567/");
+    fill("#name").with("steve");
+    submit(".btn");
+    click("a", withText("Feed"));
+    assertThat(pageSource()).contains("Hunger: 2");
+  }
 }

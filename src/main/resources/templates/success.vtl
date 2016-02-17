@@ -1,5 +1,19 @@
-<h1> Success!! </h1>
+<h1>Meet $myTamagotchi.getName()</h1>
 
-Your Place and Year have been saved!
+<h3>$myTamagotchi.getName()'s Stats:</h3>
+<ul>
+  <li>Weight: $myTamagotchi.getWeight()</li>
+  <li>Hunger: $myTamagotchi.getHunger()</li>
+  <li>Happiness: $myTamagotchi.getHappiness()</li>
+  <li>Sleepiness: $myTamagotchi.getSleepiness()</li>
+</ul>
 
-<a href="/"> Go Back</a>
+<h3>$myTamagotchi.getName()'s status is: $myTamagotchi.checkStatus()</h3>
+<h4>$myTamagotchi.getName() is $myTamagotchi.getMinutesOld() minutes old.</h4>
+
+<form action="/tamagotchis" method="post">
+  <button name="action" class="btn btn-success" value="feed">Feed</button>
+  <button name="action" class="btn btn-danger" value="play">Play</button>
+  <button name="action" class="btn btn-warning" value="nap">Nap</button>
+  <button name="action" class="btn btn-info" value="sleep">Sleep</button>
+</form>

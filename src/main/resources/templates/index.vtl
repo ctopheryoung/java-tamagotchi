@@ -1,20 +1,15 @@
-<h1>Places You've Visited</h1>
+<h1>Create a Tamagotchi</h1>
 
-<ul>
+<!-- <ul>
   #foreach ($place in $places)
     <li>$place.getPlaceName(), $place.getYearVisited()
     </li>
   #end
-</ul>
+</ul> -->
 
-<p>Add a new place and Year:</p>
+<form action="/tamagotchis" method="post">
+  <label for="name">Name your Tamagotchi:</label>
+  <input type="text" name="name" id="name">
 
-<form action="/places" method="post">
-  <label for="place">Place Name:</label>
-  <input type="text" name="place" id="place">
-
-  <label for="year">Year Visited:</label>
-  <input type="text" name="year" id="year">
-
-  <button type="submit" class="btn btn-default">Add info</button>
+  <button type="submit" class="btn btn-default">Create Life</button>
 </form>
